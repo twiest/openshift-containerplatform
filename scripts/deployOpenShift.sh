@@ -74,8 +74,10 @@ ansible_become=yes
 openshift_install_examples=true
 deployment_type=openshift-enterprise
 docker_udev_workaround=True
-openshift_use_dnsmasq=no
+openshift_use_dnsmasq=false
 openshift_master_default_subdomain=$ROUTING
+openshift_override_hostname_check=true
+# osm_use_cockpit=false
 
 openshift_master_cluster_hostname=$MASTERPUBLICIPHOSTNAME
 openshift_master_cluster_public_hostname=$MASTERPUBLICIPHOSTNAME
@@ -111,8 +113,10 @@ ansible_become=yes
 openshift_install_examples=true
 deployment_type=openshift-enterprise
 docker_udev_workaround=True
-openshift_use_dnsmasq=no
+openshift_use_dnsmasq=false
 openshift_master_default_subdomain=$ROUTING
+openshift_override_hostname_check=true
+# osm_use_cockpit=false
 
 openshift_master_cluster_method=native
 openshift_master_cluster_hostname=$MASTERPUBLICIPHOSTNAME

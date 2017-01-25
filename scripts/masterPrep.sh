@@ -48,6 +48,9 @@ systemctl start cockpit.socket
 echo $(date) " - Install base packages and update system to latest packages"
 
 yum -y install wget git net-tools bind-utils iptables-services bridge-utils bash-completion httpd-tools
+systemctl stop firewalld
+systemctl start iptables
+
 yum -y update --exclude=WALinuxAgent
 
 # Install OpenShift utilities
@@ -82,5 +85,7 @@ fi
 
 systemctl enable docker
 systemctl start docker
+
+reboot 0 
 
 echo $(date) " - Script Complete"

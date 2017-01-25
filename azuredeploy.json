@@ -5,7 +5,7 @@
 		"_artifactsLocation": {
 			"type": "string",
 			"metadata": {
-				"description": "Base URL for Template FIles",
+				"description": "Base URL for Template Files",
 				"artifactsBaseUrl": ""
 			},
 			"defaultValue": "https://raw.githubusercontent.com/haroldwongms/openshift-containerplatform/master/"
@@ -1313,7 +1313,7 @@
 		},
 		"openshiftMasterSsh": {
 			"type": "string",
-			"value": "[concat('ssh ', parameters('adminUsername'), '@', reference(parameters('openshiftMasterPublicIpDnsLabel')).dnsSettings.fqdn, ':2200')]"
+			"value": "[concat('ssh ', parameters('adminUsername'), '@', reference(parameters('openshiftMasterPublicIpDnsLabel')).dnsSettings.fqdn, ' -p 2200')]"
 		},
 		"openshiftInfraLoadBalancerFQDN": {
 			"type": "string",
