@@ -1,0 +1,17 @@
+#!/usr/bin/ansible-playbook --inventory=inventory.ini
+
+- hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+  - file:
+      state: directory
+      mode: "0700"
+      path: /root/.ssh
+
+  - copy:
+      src: /home/ocpadmin/.ssh/authorized_keys
+      dest: /root/.ssh/authorized_keys
+      remote_src: true
+      owner: root
+      group: root
